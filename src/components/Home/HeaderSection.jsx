@@ -2,7 +2,9 @@ import img from "../../assets/banner1.jpg";
 import img2 from "../../assets/banner2.jpg";
 import img3 from "../../assets/banner3.jpg";
 import apple from "../../assets/Apple-Watch.jpg";
+
 const HeaderSection = () => {
+ 
   return (
     <div>
       <div className="carousel relative w-full lg:h-[50%]">
@@ -41,7 +43,7 @@ const HeaderSection = () => {
         </div>
       </div>
       <div className="hidden lg:block absolute w-[100%] bottom-5 ">
-        <img className="w-[80%] mx-auto h-[170px] object-cover" src={apple} alt="" />
+        <img className={`w-[80%]  mx-auto h-[170px] object-cover opacity-80`} src={apple} alt="" />
       </div>
     </div>
   );

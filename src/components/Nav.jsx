@@ -31,7 +31,9 @@ const Nav = () => {
       {/* --------------------- Nav for lg device ----------------- */}
       <div className="bg-[#FFFBF5]">
         <div className=" max-w-7xl mx-auto w-full flex items-center justify-between">
-          <img className="w-[200px] hidden lg:block" src={logo} alt="" />
+          <Link to={"/"}>
+            <img className="w-[200px] hidden lg:block" src={logo} alt="" />
+          </Link>
           <div className="hidden lg:flex items-center gap-4 font-semibold text-gray-700">
             <NavLink>Home</NavLink>
             <NavLink>Products</NavLink>
@@ -39,7 +41,9 @@ const Nav = () => {
             <NavLink>Contact</NavLink>
           </div>
           <div className="flex flex-col lg:flex-row items-center lg:gap-4 font-semibold text-gray-700 w-full lg:w-fit">
-            <img className="w-[200px] lg:hidden" src={logo} alt="" />
+            <Link to={'/'}>
+              <img className="w-[200px] lg:hidden" src={logo} alt="" />
+            </Link>
             <div className="flex gap-4">
               <NavLink>Sing In</NavLink>
               <NavLink>Sing Up</NavLink>
