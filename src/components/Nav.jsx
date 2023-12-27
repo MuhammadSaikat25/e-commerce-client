@@ -29,7 +29,7 @@ const Nav = () => {
         </div>
       </div>
       {/* --------------------- Nav for lg device ----------------- */}
-      <div className="bg-[#FFFBF5] p-1">
+      <div className="bg-[#FFFBF5]">
         <div className=" max-w-7xl mx-auto w-full flex items-center justify-between">
           <img className="w-[200px] hidden lg:block" src={logo} alt="" />
           <div className="hidden lg:flex items-center gap-4 font-semibold text-gray-700">
