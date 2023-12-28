@@ -4,7 +4,7 @@ import { AuthContext } from "../Firebase/AuthProvider";
 import { MdEmail } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { MdMenuOpen } from "react-icons/md";
-import logo from "../assets/brand-img.png";
+import logo from "../assets/Logo.png";
 import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
@@ -29,26 +29,26 @@ const Nav = () => {
         </div>
       </div>
       {/* --------------------- Nav for lg device ----------------- */}
-      <div className="bg-[#FFFBF5]">
+      <div className="bg-[#3A4D39] ">
         <div className=" max-w-7xl mx-auto w-full flex items-center justify-between">
           <Link to={"/"}>
             <img className="w-[200px] hidden lg:block" src={logo} alt="" />
           </Link>
           <div className="hidden lg:flex items-center gap-4 font-semibold text-gray-700">
-            <NavLink>Home</NavLink>
-            <NavLink>Products</NavLink>
-            <NavLink>Shipping & returns</NavLink>
-            <NavLink>Contact</NavLink>
+            <NavLink className={`text-white`}>Home</NavLink>
+            <NavLink className={`text-white`}>Products</NavLink>
+            <NavLink className={`text-white`}>Shipping & returns</NavLink>
+            <NavLink className={`text-white`}>Contact</NavLink>
           </div>
           <div className="flex flex-col lg:flex-row items-center lg:gap-4 font-semibold text-gray-700 w-full lg:w-fit">
-            <Link to={'/'}>
+            <Link to={"/"}>
               <img className="w-[200px] lg:hidden" src={logo} alt="" />
             </Link>
             <div className="flex gap-4">
-              <NavLink>Sing In</NavLink>
-              <NavLink>Sing Up</NavLink>
-              <NavLink>Sing Out</NavLink>
-              <NavLink>Dashboard</NavLink>
+              <NavLink className={`text-white`}>Sing In</NavLink>
+              <NavLink className={`text-white`}>Sing Up</NavLink>
+              <NavLink className={`text-white`}>Sing Out</NavLink>
+              <NavLink className={`text-white`}>Dashboard</NavLink>
             </div>
           </div>
         </div>
@@ -64,10 +64,10 @@ const Nav = () => {
         </div>
         {open && (
           <div className="flex items-center w-fit z-50 absolute right-1 h-fit flex-col bg-[#04364A] text-white p-3">
-            <NavLink>Home</NavLink>
-            <NavLink>Products</NavLink>
-            <NavLink>Shipping & returns</NavLink>
-            <NavLink>Contact</NavLink>
+            <NavLink className={`text-white`}>Home</NavLink>
+            <NavLink className={`text-white`}>Products</NavLink>
+            <NavLink className={`text-white`}>Shipping & returns</NavLink>
+            <NavLink className={`text-white`}>Contact</NavLink>
           </div>
         )}
       </div>
