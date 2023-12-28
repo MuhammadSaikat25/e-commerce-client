@@ -12,7 +12,7 @@ const Newsletter = () => {
         </div>
         <div className="flex items-center">
           <input className="border w-full p-1 rounded-l-3xl" type="text" placeholder="Enter your Email"/>
-          <button className="bg-orange-600 text-white p-1 rounded-r-3xl">SUBSCRIBE</button>
+          <button className="bg-orange-600 text-white px-4 py-1 rounded-r-3xl">SUBSCRIBE</button>
         </div>
       </div>
     </div>
