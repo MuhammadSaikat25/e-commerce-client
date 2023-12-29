@@ -36,7 +36,7 @@ const Nav = () => {
           </Link>
           <div className="hidden lg:flex items-center gap-4 font-semibold text-gray-700">
             <NavLink className={`text-white`}>Home</NavLink>
-            <NavLink className={`text-white`}>Products</NavLink>
+            <NavLink className={`text-white`} to={'/products'}>Products</NavLink>
             <NavLink className={`text-white`}>Shipping & returns</NavLink>
             <NavLink className={`text-white`}>Contact</NavLink>
           </div>
@@ -45,7 +45,7 @@ const Nav = () => {
               <img className="w-[200px] lg:hidden" src={logo} alt="" />
             </Link>
             <div className="flex gap-4">
-              <NavLink className={`text-white`}>Sing In</NavLink>
+              <NavLink className={`text-white`} to={'singIn'}>Sing In</NavLink>
               <NavLink className={`text-white`}>Sing Up</NavLink>
               <NavLink className={`text-white`}>Sing Out</NavLink>
               <NavLink className={`text-white`}>Dashboard</NavLink>
@@ -65,7 +65,7 @@ const Nav = () => {
         {open && (
           <div className="flex items-center w-fit z-50 absolute right-1 h-fit flex-col bg-[#04364A] text-white p-3">
             <NavLink className={`text-white`}>Home</NavLink>
-            <NavLink className={`text-white`}>Products</NavLink>
+            <NavLink className={`text-white`} to={'/products'}>Products</NavLink>
             <NavLink className={`text-white`}>Shipping & returns</NavLink>
             <NavLink className={`text-white`}>Contact</NavLink>
           </div>
