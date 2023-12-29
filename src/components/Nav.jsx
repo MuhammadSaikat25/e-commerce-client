@@ -46,7 +46,7 @@ const Nav = () => {
             </Link>
             <div className="flex gap-4">
               <NavLink className={`text-white`} to={'singIn'}>Sing In</NavLink>
-              <NavLink className={`text-white`}>Sing Up</NavLink>
+              <NavLink className={`text-white`} to={'singUp'}>Sing Up</NavLink>
               <NavLink className={`text-white`}>Sing Out</NavLink>
               <NavLink className={`text-white`}>Dashboard</NavLink>
             </div>

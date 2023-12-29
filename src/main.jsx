@@ -9,6 +9,7 @@ import AuthProvider from "./Firebase/AuthProvider";
 import Product from "./page/Products/Product";
 import AllProducts from "./page/Products/AllProducts";
 import SingIn from "./page/SingIn";
+import SingUp from "./page/SingUp";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path:"singIn",
     element:<SingIn></SingIn>
+  },
+  {
+    path:"singUp",
+    element:<SingUp></SingUp>
   }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
