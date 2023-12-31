@@ -6,9 +6,14 @@ import { IoMdClose } from "react-icons/io";
 import { MdMenuOpen } from "react-icons/md";
 import logo from "../assets/Logo.png";
 import { Link, NavLink } from "react-router-dom";
+import { signOut } from "firebase/auth";
 
 const Nav = () => {
+  const {auth}=useContext(AuthContext)
   const [open, setOpen] = useState(false);
+  const handelOut=async()=>{
+    await signOut(auth)
+  }
   return (
     <div>
       {/* ---------------------------nav header section----------------------- */}
@@ -47,7 +52,7 @@ const Nav = () => {
             <div className="flex gap-4">
               <NavLink className={`text-white`} to={'singIn'}>Sing In</NavLink>
               <NavLink className={`text-white`} to={'singUp'}>Sing Up</NavLink>
-              <NavLink className={`text-white`}>Sing Out</NavLink>
+              <NavLink onClick={handelOut} className={`text-white`}>Sing Out</NavLink>
               <NavLink className={`text-white`}>Dashboard</NavLink>
             </div>
           </div>

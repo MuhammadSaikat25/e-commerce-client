@@ -1,12 +1,35 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../assets/footer-logo.png";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { IoEyeOutline } from "react-icons/io5";
-import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 const SingIn = () => {
   const [show, setShow] = useState(false);
+  const { signIn } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
+  const handelLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    try {
+      const signInRes = await signIn(email, password);
+      console.log(signInRes);
+      setError("");
+      setLoading(false);
+      navigate("/");
+    } catch (error) {
+      setLoading(false);
+      if (error.code === "auth/invalid-login-credentials") {
+        setError("invalid-login-credentials");
+      }
+    }
+  };
 
   return (
     <div className="bg-[#FFF7D4] flex items-center justify-center h-screen p-3">
@@ -15,22 +38,33 @@ const SingIn = () => {
           <h1 className="text-2xl font-bold text-gray-600">Welcome to </h1>
           <img src={logo} alt="" />
         </span>
-        <form className="mt-4 flex flex-col gap-4 relative">
+        <form
+          onSubmit={handelLogin}
+          className="mt-4 flex flex-col gap-4 relative"
+        >
           <input
             className="border-b-2 border-gray-950 w-full p-2 rounded-md"
             type="email"
-            name=""
+            name="email"
             placeholder="Email"
+            required
           />
           <input
             className="border-b-2 border-gray-950 w-full p-2 rounded-md "
             type={`${show ? "text" : "password"}`}
-            name=""
+            name="password"
             placeholder="Password"
+            required
           />
-          <button className="bg-[#F05941] text-white rounded-sm font-bold">
-            Sing In
-          </button>
+          {loading ? (
+            <div className="w-full flex justify-center">
+              <span className="loading text-center loading-spinner loading-md"></span>
+            </div>
+          ) : (
+            <button className="bg-[#F05941] text-white rounded-sm font-bold">
+              Sing In
+            </button>
+          )}
           <span
             className="absolute bottom-14 lg:bottom-[50px] right-3"
             onClick={() => setShow(!show)}
@@ -52,6 +86,7 @@ const SingIn = () => {
             Sing in white Google
           </button>
         </div>
+        <h1 className="text-center text-red-600">{error}</h1>
         <div className="flex items-center justify-center gap-2">
           <h1 className="text-gray-950">New to TecHouse</h1>
           <Link className="text-blue-700 " to={"/singUp"}>

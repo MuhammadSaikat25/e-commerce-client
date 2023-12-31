@@ -4,11 +4,10 @@ import img3 from "../../assets/banner3.jpg";
 import apple from "../../assets/Apple-Watch.jpg";
 
 const HeaderSection = () => {
- 
   return (
     <div>
       <div className="carousel relative w-full lg:h-[50%]">
-        <div id="slide1" className="carousel-item relative w-full lg:h-[500px]">
+        <div id="slide1" className="carousel-item relative w-full lg:h-[700px]">
           <img src={img} className="w-full object-fill" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide4" className="btn btn-circle">
@@ -41,9 +40,6 @@ const HeaderSection = () => {
             </a>
           </div>
         </div>
-      </div>
-      <div className="hidden lg:block absolute w-[100%] bottom-5 ">
-        <img className={`w-[80%]  mx-auto h-[170px] object-cover opacity-80`} src={apple} alt="" />
       </div>
     </div>
   );

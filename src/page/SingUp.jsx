@@ -8,10 +8,11 @@ import { updateProfile } from "firebase/auth";
 
 const SingUp = () => {
   const [show, setShow] = useState(false);
-  const { crateUser, auth } = useContext(AuthContext);
+  const { createUser, auth } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const [error, seTError] = useState("");
   const navigate = useNavigate();
+
   const SingUp = async (e) => {
     setLoading(true);
     e.preventDefault();
@@ -20,7 +21,7 @@ const SingUp = () => {
     const password = e.target.password.value;
 
     try {
-      const singUpRes = await crateUser(email, password);
+      const singUpRes = await createUser(email, password);
       const updateUser = await updateProfile(auth.currentUser, {
         displayName: name,
       });
@@ -52,18 +53,21 @@ const SingUp = () => {
             type="text"
             name="name"
             placeholder="Name"
+            required
           />
           <input
             className="border-b-2 border-gray-950 w-full p-2 rounded-md"
             type="email"
             name="email"
             placeholder="Email"
+            required
           />
           <input
             className="border-b-2 border-gray-950 w-full p-2 rounded-md "
             type={`${show ? "text" : "password"}`}
             name="password"
             placeholder="Password"
+            required
           />
           {loading ? (
             <div className="w-full flex justify-center">
