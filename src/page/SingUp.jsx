@@ -5,7 +5,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { AuthContext } from "../Firebase/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
-
+import axios from "axios";
 const SingUp = () => {
   const [show, setShow] = useState(false);
   const { createUser, auth } = useContext(AuthContext);
@@ -21,10 +21,20 @@ const SingUp = () => {
     const password = e.target.password.value;
 
     try {
+      const userData = {
+        email,
+        name,
+        role:'user'
+      };
       const singUpRes = await createUser(email, password);
       const updateUser = await updateProfile(auth.currentUser, {
         displayName: name,
       });
+
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_SERVER}/postUser`,
+        userData
+      );
 
       setLoading(false);
       seTError("");
@@ -41,7 +51,6 @@ const SingUp = () => {
 
   return (
     <div className="bg-[#FFF7D4] flex items-center justify-center h-screen p-3">
-     
       <div className=" border-gray-700 shadow-2xl bg-[#FFF78A] shadow-gray-500 p-10 rounded border-2">
         <span className="flex items-center gap-2">
           <h1 className="text-2xl font-bold text-gray-600">Welcome to </h1>

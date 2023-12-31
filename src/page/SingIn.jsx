@@ -19,7 +19,6 @@ const SingIn = () => {
     const password = e.target.password.value;
     try {
       const signInRes = await signIn(email, password);
-      console.log(signInRes);
       setError("");
       setLoading(false);
       navigate("/");
