@@ -10,7 +10,7 @@ const CATEGORY = () => {
       </h1>
       <div className="flex flex-col lg:flex-row gap-3 w-fit mx-auto">
         <div className="relative">
-          <Link to={'/product/phone'}>
+          <Link to={'/productCategory/phone'}>
             <h1 className="bg-[#141E46] text-white w-fit px-10 rounded-r-3xl absolute top-0">
               phone
             </h1>
@@ -18,7 +18,7 @@ const CATEGORY = () => {
           </Link>
         </div>
         <div className="relative">
-          <Link to={"/product/pc"}>
+          <Link to={"/productCategory/pc"}>
             <h1 className="bg-[#141E46] text-white w-fit px-10 rounded-r-3xl absolute top-0">
               pc
             </h1>
@@ -26,7 +26,7 @@ const CATEGORY = () => {
           </Link>
         </div>
         <div className="relative ">
-          <Link to={"/product/Accessories"}>
+          <Link to={"/productCategory/Accessories"}>
             <h1 className="bg-[#141E46] text-white w-fit px-10 rounded-r-3xl absolute top-0">
               accessories
             </h1>

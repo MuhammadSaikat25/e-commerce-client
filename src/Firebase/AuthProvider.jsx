@@ -34,10 +34,13 @@ const AuthProvider = ({ children }) => {
           .then((res) => {
             const token = res.data.token;
             localStorage.setItem("token", token);
+            localStorage.setItem('user','true')
             setLoading(false);
           });
       }else{
         localStorage.removeItem('token')
+        localStorage.removeItem('user')
+
       }
     });
     return () => {

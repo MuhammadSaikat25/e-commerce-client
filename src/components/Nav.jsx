@@ -9,11 +9,13 @@ import { Link, NavLink } from "react-router-dom";
 import { signOut } from "firebase/auth";
 
 const Nav = () => {
-  const {auth}=useContext(AuthContext)
+  const { auth, user } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const handelOut=async()=>{
-    await signOut(auth)
-  }
+  const handelOut = async () => {
+    await signOut(auth);
+  };
+  const isUser = localStorage.getItem("user");
+
   return (
     <div>
       {/* ---------------------------nav header section----------------------- */}
@@ -40,8 +42,21 @@ const Nav = () => {
             <img className="w-[200px] hidden lg:block" src={logo} alt="" />
           </Link>
           <div className="hidden lg:flex items-center gap-4 font-semibold text-gray-700">
-            <NavLink className={`text-white`}>Home</NavLink>
-            <NavLink className={`text-white`} to={'/products'}>Products</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "text-orange-400" : "text-white"
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "text-orange-400" : "text-white"
+              }
+              to={"/products"}
+            >
+              Products
+            </NavLink>
             <NavLink className={`text-white`}>Shipping & returns</NavLink>
             <NavLink className={`text-white`}>Contact</NavLink>
           </div>
@@ -49,11 +64,24 @@ const Nav = () => {
             <Link to={"/"}>
               <img className="w-[200px] lg:hidden" src={logo} alt="" />
             </Link>
-            <div className="flex gap-4">
-              <NavLink className={`text-white`} to={'singIn'}>Sing In</NavLink>
-              <NavLink className={`text-white`} to={'singUp'}>Sing Up</NavLink>
-              <NavLink onClick={handelOut} className={`text-white`}>Sing Out</NavLink>
-              <NavLink className={`text-white`}>Dashboard</NavLink>
+            <div className="">
+              {isUser === "true" ? (
+                <div className="flex gap-3">
+                  <NavLink onClick={handelOut} className={`text-white`}>
+                    Sing Out
+                  </NavLink>
+                  <NavLink className={`text-white`}>Dashboard</NavLink>
+                </div>
+              ) : (
+                <div className="flex gap-3">
+                  <NavLink className={`text-white`} to={"singIn"}>
+                    Sing In
+                  </NavLink>
+                  <NavLink className={`text-white`} to={"singUp"}>
+                    Sing Up
+                  </NavLink>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -70,7 +98,9 @@ const Nav = () => {
         {open && (
           <div className="flex items-center w-fit z-50 absolute right-1 h-fit flex-col bg-[#04364A] text-white p-3">
             <NavLink className={`text-white`}>Home</NavLink>
-            <NavLink className={`text-white`} to={'/products'}>Products</NavLink>
+            <NavLink className={`text-white`} to={"/products"}>
+              Products
+            </NavLink>
             <NavLink className={`text-white`}>Shipping & returns</NavLink>
             <NavLink className={`text-white`}>Contact</NavLink>
           </div>
