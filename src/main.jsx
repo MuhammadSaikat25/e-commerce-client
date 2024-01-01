@@ -11,6 +11,8 @@ import SingIn from "./page/SingIn";
 import SingUp from "./page/SingUp";
 import CategoryProduct from "./page/Products/CategoryProduct";
 import ProductDetails from "./page/Products/ProductDetails";
+import Dashboard from "./page/Dashboard/Dashboard";
+import AddToCart from "./page/Dashboard/User/AddToCart";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,16 @@ const router = createBrowserRouter([
   {
     path:"singUp",
     element:<SingUp></SingUp>
+  },
+  {
+    path:'dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:"addToCard",
+        element:<AddToCart></AddToCart>
+      }
+    ]
   }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

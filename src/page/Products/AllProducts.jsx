@@ -1,20 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "../../components/Spinner";
-import { IoGrid, IoMenu } from "react-icons/io5";
-import SingleJob from "./SingleJob";
+import SingleProduct from "./SingleProduct";
 
 const AllProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  const handelCard = (type) => {
-    if (type === "grid") {
-      localStorage.setItem("card", "grid");
-    } else if (type === "flex") {
-      localStorage.setItem("card", "flex");
-    }
-  };
+  
   useEffect(() => {
     setLoading(true);
     axios
@@ -38,7 +30,7 @@ const AllProducts = () => {
         )}
         <div className="grid grid-cols-1 gap-3 lg:grid-cols-4">
           {allProducts?.map((products) => (
-            <SingleJob key={products._id} products={products}></SingleJob>
+            <SingleProduct key={products._id} products={products}></SingleProduct>
           ))}
         </div>
       </div>

@@ -9,7 +9,7 @@ import { Link, NavLink } from "react-router-dom";
 import { signOut } from "firebase/auth";
 
 const Nav = () => {
-  const { auth, user } = useContext(AuthContext);
+  const { auth,} = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const handelOut = async () => {
     await signOut(auth);

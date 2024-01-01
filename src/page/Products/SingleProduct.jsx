@@ -1,8 +1,5 @@
-import { Link } from "react-router-dom";
-
-
-const SingleJob = ({ products }) => {
- 
+import {Link} from 'react-router-dom'
+const SingleProduct = ({products}) => {
   return (
     <Link to={`/productDetails/${products._id}`}>
       <div className="w-fit relative border mx-auto border-black rounded shadow-md shadow-gray-500">
@@ -19,4 +16,4 @@ const SingleJob = ({ products }) => {
   );
 };
 
-export default SingleJob;
+export default SingleProduct;
