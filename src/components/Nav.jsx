@@ -16,6 +16,7 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
   const [role, setRole] = useState("");
   const [modal, setModal] = useState(false);
+  // console.log(role)
   const handelOut = async () => {
     await signOut(auth);
   };
@@ -25,8 +26,8 @@ const Nav = () => {
     const sellerData = {
       email: user?.email,
       name: user.displayName,
-      status:'pending',
-      role:"user"
+      status: "pending",
+      role: "user",
     };
     const sellerRes = await axios.put(
       `${import.meta.env.VITE_SERVER}/applySeller/${user?.email}`,
@@ -94,7 +95,7 @@ const Nav = () => {
                   <NavLink onClick={handelOut} className={`text-white`}>
                     Sing Out
                   </NavLink>
-                  {isUser === "true" && (
+                  {isUser === "true" && role === "user" && (
                     <NavLink
                       onClick={() => setModal(!modal)}
                       className={`text-white`}
@@ -102,6 +103,7 @@ const Nav = () => {
                       Become Seller
                     </NavLink>
                   )}
+
                   {/* ----------------------------- Dashboard --------------------------- */}
                   <div className="">
                     {role === "user" && (
@@ -115,6 +117,14 @@ const Nav = () => {
                     {role === "admin" && (
                       <NavLink
                         to={`/dashboard/SellerRequest`}
+                        className={`text-white`}
+                      >
+                        Dashboard
+                      </NavLink>
+                    )}
+                    {role === "seller" && (
+                      <NavLink
+                        to={`/dashboard/addProduct`}
                         className={`text-white`}
                       >
                         Dashboard
@@ -136,7 +146,6 @@ const Nav = () => {
           </div>
         </div>
       </div>
-
       {/* --------------------------- nav for sm device --------------------------- */}
       <div className="lg:hidden max-w-7xl mx-auto bg-[#AFC8AD] ">
         <span className="flex justify-end" onClick={() => setOpen(!open)}>

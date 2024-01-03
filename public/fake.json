@@ -1,138 +1,182 @@
 [
-    {
-      "category": "phone",
-      "price": 1099.99,
-      "image": "https://www.mistermobile.com.sg/wp-content/uploads/2022/09/iPhone-14-Pro-Max-Purple-2.png",
-      "name": "iphone-14 pro max",
-      "color": "Midnight Black",
-      "sellerEmail": "smartxpro@example.com",
-      "description": "High-performance smartphone with advanced features."
-    },
-    {
-      "category": "pc",
-      "price": 1299.99,
-      "image": "https://www.binarylogic.com.bd/images/product_image/largebinary-gaming-pc-01bl-12900k-leadtek-rtx3090ti-12gb.webp",
-      "name": "Binary Gaming PC-01",
-      "color": "Silver",
-      "sellerEmail": "powerstation@example.com",
-      "description": "Top-of-the-line desktop PC for gaming and productivity."
-    },
-    {
-      "category": "accessory",
-      "price": 49.99,
-      "image": "https://assets2.razerzone.com/images/pnx.assets/dd2cb52f4bf27ff926aa88e6df386019/razer-basilisk-v3-pro-500x500.png",
-      "name": "Gaming Mouse X",
-      "color": "RGB Spectrum",
-      "sellerEmail": "gaminggear@example.com",
-      "description": "Precision gaming mouse with customizable RGB lighting."
-    },
-    {
-      "category": "phone",
-      "price": 799.99,
-      "image": "https://diamu.com.bd/wp-content/uploads/2020/10/Apple-iPhone-12-Pro-Max-Graphite.png",
-      "name": "iPhone-12-Pro-Max",
-      "color": "Rose Gold",
-      "sellerEmail": "techmaster@example.com",
-      "description": "Sleek and stylish smartphone with cutting-edge technology."
-    },
-    {
-      "category": "pc",
-      "price": 899.99,
-      "image": "https://www.cyberpowersystem.co.uk/images/cs/CPY60/CS_CPY60_400.png?v3",
-      "name": "UltraSpeed Pro",
-      "color": "Matte Black",
-      "sellerEmail": "ultraspeed@example.com",
-      "description": "High-speed desktop PC for professionals and enthusiasts."
-    },
-    {
-      "category": "accessory",
-      "price": 59.99,
-      "image": "https://soundpeats.pk/cdn/shop/files/Air3_1_1-min_700x_2f345b27-63d3-40b8-8802-9f2a66f1e243.webp?v=1687863521&width=2048",
-      "name": "Wireless Earbuds Z",
-      "color": "Charcoal Gray",
-      "sellerEmail": "earbudz@example.com",
-      "description": "Wireless earbuds with noise cancellation for an immersive audio experience."
-    },
-    {
-      "category": "phone",
-      "price": 649.99,
-      "image": "https://www.corning.com/microsites/csm/gorillaglass/Nothing/CGG_Nothing_Phone%202.png",
-      "name": "Nothing 2",
-      "color": "Black",
-      "sellerEmail": "ecotech@example.com",
-      "description": "Environmentally friendly smartphone with a lightweight design."
-    },
-    {
-      "category": "pc",
-      "price": 1499.99,
-      "image": "https://nzxt.com/assets/cms/34299/1689030709-playerthreeprime-h9-hero-no-badge-white.png?auto=format&fit=max&h=550&w=384",
-      "name": "MegaBeast X",
-      "color": "Gunmetal Gray",
-      "sellerEmail": "megabeast@example.com",
-      "description": "A powerhouse of a desktop PC with advanced graphics capabilities."
-    },
-    {
-      "category": "accessory",
-      "price": 79.99,
-      "image": "https://5.imimg.com/data5/ECOM/Default/2023/8/334860160/WY/EN/SR/194582600/main-image-4-1-500x500.png",
-      "name": "Fitness Tracker Pro",
-      "color": "Lime Green",
-      "sellerEmail": "fitnesstracker@example.com",
-      "description": "Track your fitness goals with this feature-rich fitness tracker."
-    },
-    {
-      "category": "phone",
-      "price": 1200.99,
-      "image": "https://d61s2hjse0ytn.cloudfront.net/color/255/GalaxyS23_Ultra_Fantom_black.webp",
-      "name": "Samsung 23 ",
-      "color": "Black",
-      "sellerEmail": "superslim@example.com",
-      "description": "Ultra-thin smartphone with a large high-resolution display."
-    },
-    {
-      "category": "pc",
-      "price": 1099.99,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeeYfhhAXwESinVW_pb6IIyLby9VSCr59GwQ&usqp=CAU",
-      "name": "ProTech Tower",
-      "color": "Graphite",
-      "sellerEmail": "protech@example.com",
-      "description": "Professional-grade tower PC for demanding computing tasks."
-    },
-    {
-      "category": "accessory",
-      "price": 59.99,
-      "image": "https://resellersinventory.casdnet.com/assets/images/product_image/64df548632449-0.png",
-      "name": "Wireless Charging Pad",
-      "color": "Rose Quartz",
-      "sellerEmail": "chargingpad@example.com",
-      "description": "Effortlessly charge your devices with this stylish wireless charging pad."
-    },
-    {
-      "category": "phone",
-      "price": 999.99,
-      "image": "https://images.samsung.com/is/image/samsung/p6pim/bd/2307/gallery/bd-galaxy-z-flip5-f731-sm-f731blgabkd-thumb-537487859?$344_344_PNG$",
-      "name": "Samsung Fold3",
-      "color": "Sapphire Blue",
-      "sellerEmail": "xperienceplus@example.com",
-      "description": "Immerse yourself in a world of technology with the Xperience Plus smartphone."
-    },
-    {
-      "category": "pc",
-      "price": 799.99,
-      "image": "https://www.cyberpowerpc.com/images/cs/prism321v/cs-450-178_400.png",
-      "name": "SpeedMaster Deluxe",
-      "color": "Platinum",
-      "sellerEmail": "speedmaster@example.com",
-      "description": "Deluxe edition desktop PC for ultimate speed and performance."
-    },
-    {
-      "category": "accessory",
-      "price": 49.99,
-      "image": "https://ae01.alicdn.com/kf/S56e6fb13d68842e3b3b8c341b4a309ddc/Ajazz-K870T-Pro-TKL-Hot-Swappable-Bluetooth-5-0-2-4G-Type-C-Wired-Mechanical-Gaming.png",
-      "name": "RGB Keyword 1k2",
-      "color": "Royal Purple",
-      "sellerEmail": "keyboardpro@example.com",
-      "description": "Enhance your typing experience with this premium Bluetooth keyboard."
-    }
-  ]
-  
+  {
+    "category": "phone",
+    "price": 1099.99,
+    "image": "https://www.mistermobile.com.sg/wp-content/uploads/2022/09/iPhone-14-Pro-Max-Purple-2.png",
+    "name": "iphone-14 pro max",
+    "color": "Midnight Black",
+    "sellerEmail": "smartxpro@example.com",
+    "description": "High-performance smartphone with advanced features.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "pc",
+    "price": 1299.99,
+    "image": "https://www.binarylogic.com.bd/images/product_image/largebinary-gaming-pc-01bl-12900k-leadtek-rtx3090ti-12gb.webp",
+    "name": "Binary Gaming PC-01",
+    "color": "Silver",
+    "sellerEmail": "powerstation@example.com",
+    "description": "Top-of-the-line desktop PC for gaming and productivity.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "accessory",
+    "price": 49.99,
+    "image": "https://assets2.razerzone.com/images/pnx.assets/dd2cb52f4bf27ff926aa88e6df386019/razer-basilisk-v3-pro-500x500.png",
+    "name": "Gaming Mouse X",
+    "color": "RGB Spectrum",
+    "sellerEmail": "gaminggear@example.com",
+    "description": "Precision gaming mouse with customizable RGB lighting.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "phone",
+    "price": 799.99,
+    "image": "https://diamu.com.bd/wp-content/uploads/2020/10/Apple-iPhone-12-Pro-Max-Graphite.png",
+    "name": "iPhone-12-Pro-Max",
+    "color": "Rose Gold",
+    "sellerEmail": "techmaster@example.com",
+    "description": "Sleek and stylish smartphone with cutting-edge technology.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "pc",
+    "price": 899.99,
+    "image": "https://www.cyberpowersystem.co.uk/images/cs/CPY60/CS_CPY60_400.png?v3",
+    "name": "UltraSpeed Pro",
+    "color": "Matte Black",
+    "sellerEmail": "ultraspeed@example.com",
+    "description": "High-speed desktop PC for professionals and enthusiasts.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "accessory",
+    "price": 59.99,
+    "image": "https://soundpeats.pk/cdn/shop/files/Air3_1_1-min_700x_2f345b27-63d3-40b8-8802-9f2a66f1e243.webp?v=1687863521&width=2048",
+    "name": "Wireless Earbuds Z",
+    "color": "Charcoal Gray",
+    "sellerEmail": "earbudz@example.com",
+    "description": "Wireless earbuds with noise cancellation for an immersive audio experience.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "phone",
+    "price": 649.99,
+    "image": "https://www.corning.com/microsites/csm/gorillaglass/Nothing/CGG_Nothing_Phone%202.png",
+    "name": "Nothing 2",
+    "color": "Black",
+    "sellerEmail": "ecotech@example.com",
+    "description": "Environmentally friendly smartphone with a lightweight design.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "pc",
+    "price": 1499.99,
+    "image": "https://nzxt.com/assets/cms/34299/1689030709-playerthreeprime-h9-hero-no-badge-white.png?auto=format&fit=max&h=550&w=384",
+    "name": "MegaBeast X",
+    "color": "Gunmetal Gray",
+    "sellerEmail": "megabeast@example.com",
+    "description": "A powerhouse of a desktop PC with advanced graphics capabilities.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "accessory",
+    "price": 79.99,
+    "image": "https://5.imimg.com/data5/ECOM/Default/2023/8/334860160/WY/EN/SR/194582600/main-image-4-1-500x500.png",
+    "name": "Fitness Tracker Pro",
+    "color": "Lime Green",
+    "sellerEmail": "fitnesstracker@example.com",
+    "description": "Track your fitness goals with this feature-rich fitness tracker.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "phone",
+    "price": 1200.99,
+    "image": "https://d61s2hjse0ytn.cloudfront.net/color/255/GalaxyS23_Ultra_Fantom_black.webp",
+    "name": "Samsung 23 ",
+    "color": "Black",
+    "sellerEmail": "superslim@example.com",
+    "description": "Ultra-thin smartphone with a large high-resolution display.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "pc",
+    "price": 1099.99,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeeYfhhAXwESinVW_pb6IIyLby9VSCr59GwQ&usqp=CAU",
+    "name": "ProTech Tower",
+    "color": "Graphite",
+    "sellerEmail": "protech@example.com",
+    "description": "Professional-grade tower PC for demanding computing tasks.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "accessory",
+    "price": 59.99,
+    "image": "https://resellersinventory.casdnet.com/assets/images/product_image/64df548632449-0.png",
+    "name": "Wireless Charging Pad",
+    "color": "Rose Quartz",
+    "sellerEmail": "chargingpad@example.com",
+    "description": "Effortlessly charge your devices with this stylish wireless charging pad.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "phone",
+    "price": 999.99,
+    "image": "https://images.samsung.com/is/image/samsung/p6pim/bd/2307/gallery/bd-galaxy-z-flip5-f731-sm-f731blgabkd-thumb-537487859?$344_344_PNG$",
+    "name": "Samsung Fold3",
+    "color": "Sapphire Blue",
+    "sellerEmail": "xperienceplus@example.com",
+    "description": "Immerse yourself in a world of technology with the Xperience Plus smartphone.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "pc",
+    "price": 799.99,
+    "image": "https://www.cyberpowerpc.com/images/cs/prism321v/cs-450-178_400.png",
+    "name": "SpeedMaster Deluxe",
+    "color": "Platinum",
+    "sellerEmail": "speedmaster@example.com",
+    "description": "Deluxe edition desktop PC for ultimate speed and performance.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  },
+  {
+    "category": "accessory",
+    "price": 49.99,
+    "image": "https://ae01.alicdn.com/kf/S56e6fb13d68842e3b3b8c341b4a309ddc/Ajazz-K870T-Pro-TKL-Hot-Swappable-Bluetooth-5-0-2-4G-Type-C-Wired-Mechanical-Gaming.png",
+    "name": "RGB Keyword 1k2",
+    "color": "Royal Purple",
+    "sellerEmail": "keyboardpro@example.com",
+    "description": "Enhance your typing experience with this premium Bluetooth keyboard.",
+    "quantity": 10,
+    "block": false,
+    "selling": 0
+  }
+]

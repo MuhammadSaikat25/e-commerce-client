@@ -3,6 +3,7 @@ import { AuthContext } from "../../Firebase/AuthProvider";
 import useAxiosInterceptor from "../../Hook/useAxiosInterceptor";
 import UserDashboardNav from "./components/user/UserDashboardNav";
 import AdminDashboard from "./components/admin/AdminDashboard";
+import SellerNavDashboard from "./components/saler/SellerNavDashboard";
 
 const DashboardNav = () => {
   const [role, setRole] = useState("");
@@ -27,10 +28,10 @@ const DashboardNav = () => {
       {loading ? (
         <h1>loading...</h1>
       ) : (
-        <div>{role === "user" && <UserDashboardNav></UserDashboardNav>}
-        {
-          role ==='admin' && <AdminDashboard></AdminDashboard>
-        }
+        <div>
+          {role === "user" && <UserDashboardNav></UserDashboardNav>}
+          {role === "admin" && <AdminDashboard></AdminDashboard>}
+          {role === "seller" && <SellerNavDashboard></SellerNavDashboard>}
         </div>
       )}
     </div>

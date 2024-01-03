@@ -15,6 +15,7 @@ import Dashboard from "./page/Dashboard/Dashboard";
 import AddToCart from "./page/Dashboard/User/AddToCart";
 import UserListing from "./page/Dashboard/components/user/UserListing";
 import SellerRequest from "./page/Dashboard/Admin/SellerRequest";
+import AddProduct from "./page/Dashboard/Seller/AddProduct";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path:"SellerRequest",
         element:<SellerRequest></SellerRequest>
+      },
+      {
+        path:'addProduct',
+        element:<AddProduct></AddProduct>
       }
     ],
   },

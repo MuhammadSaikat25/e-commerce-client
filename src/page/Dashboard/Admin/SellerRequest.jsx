@@ -26,7 +26,7 @@ const SellerRequest = () => {
       toast("Request Accept");
     }
   };
-
+// ---------------- Handel Reject ---------------------
   const handelReject = async (id,email) => {
     setId(id);
     const data = {
