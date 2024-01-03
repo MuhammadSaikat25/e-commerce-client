@@ -8,6 +8,7 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
 const ProductDetails = () => {
+  
   const { user } = useContext(AuthContext);
   const axiosInterceptor = useAxiosInterceptor();
   const { id } = useParams();
@@ -47,7 +48,7 @@ const ProductDetails = () => {
           <p className="text-gray-950 font-semibold mt-2 mb-2">
             price: ${product.price}
           </p>
-          <p className="text-gray-500 mb-2 p-3">{product.description}</p>
+          <p className="text-gray-500 mb-2 p-3 lg:p-0">{product.description}</p>
           <h1 className="text-gray-950 mb-2 font-semibold">
             Available:
             {product.quantity > 0 ? (

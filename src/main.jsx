@@ -13,6 +13,8 @@ import CategoryProduct from "./page/Products/CategoryProduct";
 import ProductDetails from "./page/Products/ProductDetails";
 import Dashboard from "./page/Dashboard/Dashboard";
 import AddToCart from "./page/Dashboard/User/AddToCart";
+import UserListing from "./page/Dashboard/components/user/UserListing";
+import SellerRequest from "./page/Dashboard/Admin/SellerRequest";
 
 const router = createBrowserRouter([
   {
@@ -20,40 +22,49 @@ const router = createBrowserRouter([
     element: <MainLayout></MainLayout>,
     children: [
       { path: "/", element: <Home></Home> },
-      {path:'productCategory/:category',element:<CategoryProduct></CategoryProduct>},
       {
-        path:"products",
-        element:<AllProducts></AllProducts>
+        path: "productCategory/:category",
+        element: <CategoryProduct></CategoryProduct>,
       },
       {
-        path:"productDetails/:id",
-        element:<ProductDetails></ProductDetails>
-      }
+        path: "products",
+        element: <AllProducts></AllProducts>,
+      },
+      {
+        path: "productDetails/:id",
+        element: <ProductDetails></ProductDetails>,
+      },
     ],
   },
   {
-    path:"singIn",
-    element:<SingIn></SingIn>
+    path: "singIn",
+    element: <SingIn></SingIn>,
   },
   {
-    path:"singUp",
-    element:<SingUp></SingUp>
+    path: "singUp",
+    element: <SingUp></SingUp>,
   },
   {
-    path:'dashboard',
-    element:<Dashboard></Dashboard>,
-    children:[
+    path: "dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
       {
-        path:"addToCard",
-        element:<AddToCart></AddToCart>
+        path: "addToCard",
+        element: <AddToCart></AddToCart>,
+      },
+      {
+        path:'myListing',
+        element:<UserListing></UserListing>
+      },
+      {
+        path:"SellerRequest",
+        element:<SellerRequest></SellerRequest>
       }
-    ]
-  }
+    ],
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
-  </React.StrictMode>
+  <AuthProvider>
+    <RouterProvider router={router} />
+  </AuthProvider>
 );

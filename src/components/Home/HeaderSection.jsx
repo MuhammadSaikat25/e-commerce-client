@@ -1,7 +1,6 @@
 import img from "../../assets/banner1.jpg";
 import img2 from "../../assets/banner2.jpg";
 import img3 from "../../assets/banner3.jpg";
-import apple from "../../assets/Apple-Watch.jpg";
 
 const HeaderSection = () => {
   return (
@@ -18,7 +17,7 @@ const HeaderSection = () => {
             </a>
           </div>
         </div>
-        <div id="slide2" className="carousel-item relative lg:h-[500px] w-full">
+        <div id="slide2" className="carousel-item relative lg:h-[700px] w-full">
           <img src={img2} className="w-full object-fill" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide1" className="btn btn-circle">
@@ -29,7 +28,7 @@ const HeaderSection = () => {
             </a>
           </div>
         </div>
-        <div id="slide4" className="carousel-item relative lg:h-[500px] w-full">
+        <div id="slide4" className="carousel-item relative lg:h-[700px] w-full">
           <img src={img3} className="w-full object-fill" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide3" className="btn btn-circle">
