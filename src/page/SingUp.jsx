@@ -16,7 +16,8 @@ const SingUp = () => {
   const SingUp = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const email = e.target.email.value;
+    const enteredEmail = e.target.email.value;
+    const email = enteredEmail.toLowerCase();
     const name = e.target.name.value;
     const password = e.target.password.value;
 
@@ -24,7 +25,7 @@ const SingUp = () => {
       const userData = {
         email,
         name,
-        role:'user'
+        role: "user",
       };
       const singUpRes = await createUser(email, password);
       const updateUser = await updateProfile(auth.currentUser, {
@@ -35,7 +36,6 @@ const SingUp = () => {
         `${import.meta.env.VITE_SERVER}/postUser`,
         userData
       );
-
       setLoading(false);
       seTError("");
       navigate("/");

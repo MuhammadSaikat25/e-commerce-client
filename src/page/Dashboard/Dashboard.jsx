@@ -3,7 +3,7 @@ import DashboardNav from './DashboardNav';
 
 const Dashboard = () => {
     return (
-        <div className='flex '>
+        <div className='flex gap-10'>
             <DashboardNav></DashboardNav>
             <Outlet></Outlet>
         </div>

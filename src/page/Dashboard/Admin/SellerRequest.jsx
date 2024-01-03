@@ -1,10 +1,100 @@
+import { useEffect, useState } from "react";
+import useAxiosInterceptor from "../../../Hook/useAxiosInterceptor";
+import { IoCheckmarkDoneSharp } from "react-icons/io5";
+import { GrClose } from "react-icons/gr";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SellerRequest = () => {
-    return (
-        <div>
-            Hello
-        </div>
+  const [sellerRequest, setSellerRequest] = useState([]);
+  const axiosInterceptor = useAxiosInterceptor();
+  const [id, setId] = useState("");
+
+  const handelAccept = async (id,email) => {
+   
+    setId(id);
+    const data = {
+      status: "accept",
+      role: "seller",
+    };
+    const acceptRes = await axiosInterceptor.patch(
+      `/acceptRequest/${id}`,
+      data
     );
+    const makeUserToSeller=await axiosInterceptor.patch(`/makeUserToSeller/${email}`)
+    if (acceptRes.data.acknowledged === true) {
+      toast("Request Accept");
+    }
+  };
+
+  const handelReject = async (id,email) => {
+    setId(id);
+    const data = {
+      status: "reject",
+      role: "user",
+    };
+    const makeUserToSeller=await axiosInterceptor.patch(`/makeUserToStillUser/${email}`)
+    const rejectRes = await axiosInterceptor.patch(`/acceptRequest/${id}`,data);
+   console.log(rejectRes)
+    if (rejectRes.data.acknowledged === true) {
+      toast("Request Reject");
+    }
+  };
+  useEffect(() => {
+    axiosInterceptor
+      .get("/getSellerRequest")
+      .then((res) => setSellerRequest(res.data));
+  }, [id]);
+
+  return (
+    <div className="lg:w-full h-[300px] flex items-center justify-center">
+      <ToastContainer></ToastContainer>
+      <table className="lg:w-[50%] border-collapse">
+        <thead className="bg-slate-200 rounded-3xl text-blue-600">
+          <tr className="">
+            <th className="p-3 text-sm font-semibold tracking-wide text-left">
+              Email
+            </th>
+            <th className="p-3 text-sm font-semibold tracking-wide text-left">
+              Name
+            </th>
+            <th>Status</th>
+            <th>Role</th>
+            <th className="p-3 text-sm font-semibold tracking-wide text-left">
+              Action
+            </th>
+          </tr>
+        </thead>
+        {/* ------------------- Table Body------------------ */}
+        <tbody className="w-full">
+          {sellerRequest?.map((data) => (
+            <tr key={data._id} className="">
+              <td className="py-4 align-middle hover:shadow-xl duration-1000 shadow-gray-200 p-4">
+                <div className="flex items-center gap-2">
+                  <h1 className="text-base font-bold text-gray-600">
+                    {data.email}
+                  </h1>
+                </div>
+              </td>
+              <td>{data.name}</td>
+              <td>{data.status}</td>
+              <td>{data.role}</td>
+              <td className="py-4 align-middle">
+                <div className="flex items-center gap-3">
+                  <button onClick={()=>handelReject(data._id,data.email)}>
+                    <GrClose></GrClose>
+                  </button>
+                  <button onClick={() => handelAccept(data._id,data.email)}>
+                    <IoCheckmarkDoneSharp></IoCheckmarkDoneSharp>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default SellerRequest;

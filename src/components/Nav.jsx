@@ -25,9 +25,11 @@ const Nav = () => {
     const sellerData = {
       email: user?.email,
       name: user.displayName,
+      status:'pending',
+      role:"user"
     };
-    const sellerRes = await axios.post(
-      `${import.meta.env.VITE_SERVER}/applySeller`,
+    const sellerRes = await axios.put(
+      `${import.meta.env.VITE_SERVER}/applySeller/${user?.email}`,
       sellerData
     );
   };
