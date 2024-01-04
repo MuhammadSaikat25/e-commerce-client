@@ -27,8 +27,10 @@ const ProductDetails = () => {
       seller,
       user: user?.email,
       quantity: number,
+      price:product.price,
+      color:product.color
     };
-    const cardRes = await axiosInterceptor.post(
+    const cardRes = await axiosInterceptor.put(
       `/addToCard/${product._id}`,
       cardData
     );
