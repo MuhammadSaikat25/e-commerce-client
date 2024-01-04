@@ -8,7 +8,6 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
 const ProductDetails = () => {
-  
   const { user } = useContext(AuthContext);
   const axiosInterceptor = useAxiosInterceptor();
   const { id } = useParams();
@@ -27,10 +26,10 @@ const ProductDetails = () => {
       seller,
       user: user?.email,
       quantity: number,
-      price:product.price,
-      color:product.color
+      price: product.price,
+      color: product.color,
     };
-    const cardRes = await axiosInterceptor.put(
+    const addCardRes = await axiosInterceptor.put(
       `/addToCard/${product._id}`,
       cardData
     );

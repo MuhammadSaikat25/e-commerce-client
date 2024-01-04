@@ -12,7 +12,10 @@ const AddToCart = () => {
   useEffect(() => {
     axiosInterceptor
       .get(`/getAllCardData/${user?.email}`)
-      .then((res) => setMyCart(res.data));
+      .then((res) => {
+        const restCart=res.data.filter(cart=>cart._id!==id)
+        setMyCart(restCart)
+      });
   }, [user?.email,id]);
 
   return (
