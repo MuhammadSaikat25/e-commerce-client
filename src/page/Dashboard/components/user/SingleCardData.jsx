@@ -5,6 +5,7 @@ import { IoMdClose } from "react-icons/io";
 
 const SingleCardData = ({ cart, setId }) => {
   const { price, proName, proImg, color, _id, seller, proId, user } = cart;
+  console.log(seller)
   const [quantity, setQuantity] = useState(cart.quantity);
   const axiosInterceptor = useAxiosInterceptor();
   // ! ----------------- Inc cart quantity
@@ -30,8 +31,9 @@ const SingleCardData = ({ cart, setId }) => {
     setId(id);
      const totalPrice=Number((price * quantity).toFixed(2))
      const paymentInfo={
-      user,totalPrice,quantity,proId,seller,proImg
+      user,totalPrice,quantity,proId,seller,proImg,proName
      }
+     console.log(paymentInfo)
     const postPaymentRes=await axiosInterceptor.post(`/payment`,paymentInfo)  
     const incSellNumber=await axiosInterceptor.patch(`/incSellNumber/${proId}`,{quantity})
     const deleteCartRes = await axiosInterceptor.delete(`/deleteCart/${id}`);

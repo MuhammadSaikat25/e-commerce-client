@@ -13,9 +13,9 @@ import CategoryProduct from "./page/Products/CategoryProduct";
 import ProductDetails from "./page/Products/ProductDetails";
 import Dashboard from "./page/Dashboard/Dashboard";
 import AddToCart from "./page/Dashboard/User/AddToCart";
-import UserListing from "./page/Dashboard/components/user/UserListing";
 import SellerRequest from "./page/Dashboard/Admin/SellerRequest";
 import AddProduct from "./page/Dashboard/Seller/AddProduct";
+import UserListing from "./page/Dashboard/User/UserListing";
 
 const router = createBrowserRouter([
   {

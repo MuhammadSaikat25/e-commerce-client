@@ -23,7 +23,7 @@ const AddProduct = () => {
       description,
       quantity,
       price,
-      sellerUser:user?.email,
+      sellerEmail:user?.email,
       selling:0,
       block:false
     };
@@ -31,6 +31,7 @@ const AddProduct = () => {
    if(AddRes.status===200){
     toast('Added Product Successful')
    }
+ 
   };
   return (
     <div className="p-10 lg:w-[70%] flex justify-center h-screen items-center">
