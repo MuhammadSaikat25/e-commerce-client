@@ -7,25 +7,33 @@ const AddToCart = () => {
   const { user } = useContext(AuthContext);
   const axiosInterceptor = useAxiosInterceptor();
   const [myCart, setMyCart] = useState([]);
-  const [id,setId]=useState('')
- 
+  const [id, setId] = useState("");
+
   useEffect(() => {
-    axiosInterceptor
-      .get(`/getAllCardData/${user?.email}`)
-      .then((res) => {
-        const restCart=res.data.filter(cart=>cart._id!==id)
-        setMyCart(restCart)
-      });
-  }, [user?.email,id]);
+    axiosInterceptor.get(`/getAllCardData/${user?.email}`).then((res) => {
+      const restCart = res.data.filter((cart) => cart._id !== id);
+      setMyCart(restCart);
+    });
+  }, [user?.email, id]);
 
   return (
     <div className="lg:w-[50%]">
-      <h1>Manage Cart Items</h1>
-      <div className="w-full">
-        {myCart?.map((cart) => (
-          <SingleCardData key={cart?._id} setId={setId} cart={cart}></SingleCardData>
-        ))}
-      </div>
+      <h1 className=" text-2xl font-semibold text-gray-700 mt-11">
+        Manage Cart Items
+      </h1>
+      {myCart.length > 0 ? (
+        <div className="w-full lg:mt-10 bg-[#FB8B24] shadow shadow-gray-600 p-5 rounded-xl">
+          {myCart?.map((cart) => (
+            <SingleCardData
+              key={cart?._id}
+              setId={setId}
+              cart={cart}
+            ></SingleCardData>
+          ))}
+        </div>
+      ) : (
+        <h1 className="mt-7 text-2xl">No data found</h1>
+      )}
     </div>
   );
 };
