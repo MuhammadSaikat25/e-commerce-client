@@ -17,6 +17,7 @@ import SellerRequest from "./page/Dashboard/Admin/SellerRequest";
 import AddProduct from "./page/Dashboard/Seller/AddProduct";
 import UserListing from "./page/Dashboard/User/UserListing";
 import MyProducts from "./page/Dashboard/Seller/MyProducts";
+import UpdateProduct from "./page/Dashboard/Seller/UpdateProduct";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path:"SellerProducts",
         element:<MyProducts></MyProducts>
+      },
+      {
+        path:"updateProduct/:id",
+        element:<UpdateProduct></UpdateProduct>
       }
     ],
   },

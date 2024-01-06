@@ -3,19 +3,30 @@ import useAxiosInterceptor from "../../../Hook/useAxiosInterceptor";
 import { AuthContext } from "../../../Firebase/AuthProvider";
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
-
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MyProducts = () => {
   const axiosInterceptor = useAxiosInterceptor();
+  const [id, setId] = useState("");
   const { user } = useContext(AuthContext);
   const [MyProducts, setMyProducts] = useState([]);
   useEffect(() => {
     axiosInterceptor
       .get(`/sellerProducts/${user?.email}`)
       .then((res) => setMyProducts(res.data));
-  }, [user?.email]);
+  }, [user?.email, id]);
+  const handelDelete = async (id) => {
+    setId(id);
+    const deleteRes = await axiosInterceptor.delete(`/deleteProduct/${id}`);
+    if (deleteRes.status === 200) {
+      toast("Delete Products Successful");
+    }
+  };
   return (
     <div className="lg:mt-10">
+      <ToastContainer></ToastContainer>
       <table className="lg:w-[70%] mx-auto border-collapse ">
         <thead className="bg-slate-200 rounded-3xl text-blue-600">
           <tr className="">
@@ -25,8 +36,12 @@ const MyProducts = () => {
             <th className="p-3 text-sm font-semibold tracking-wide text-left">
               Name
             </th>
-            <th className="p-3 text-sm font-semibold tracking-wide text-left">Quantity</th>
-            <th className="p-3 text-sm font-semibold tracking-wide text-left">Price</th>
+            <th className="p-3 text-sm font-semibold tracking-wide text-left">
+              Quantity
+            </th>
+            <th className="p-3 text-sm font-semibold tracking-wide text-left">
+              Price
+            </th>
             <th className="p-3 text-sm font-semibold tracking-wide text-left">
               Selling
             </th>
@@ -45,8 +60,15 @@ const MyProducts = () => {
               <td>${data.price}</td>
               <td>{data.selling}</td>
               <td className="flex items-center mt-3 gap-4 cursor-pointer">
-                <span><CiEdit size={20} color="blue"></CiEdit></span>
-                <span><MdOutlineDeleteForever size={20} color="blue"></MdOutlineDeleteForever></span>
+                <Link to={`/dashboard/updateProduct/${data._id}`}>
+                  <CiEdit size={20} color="blue"></CiEdit>
+                </Link>
+                <span onClick={() => handelDelete(data._id)}>
+                  <MdOutlineDeleteForever
+                    size={20}
+                    color="blue"
+                  ></MdOutlineDeleteForever>
+                </span>
               </td>
             </tr>
           ))}
