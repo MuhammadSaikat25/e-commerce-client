@@ -3,6 +3,7 @@ import { AuthContext } from "../../../Firebase/AuthProvider";
 import useAxiosInterceptor from "../../../Hook/useAxiosInterceptor";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const AddProduct = () => {
   const [category, setCategory] = useState("accessory");
   const { user } = useContext(AuthContext);
@@ -34,11 +35,11 @@ const AddProduct = () => {
  
   };
   return (
-    <div className="p-10 lg:w-[70%] flex justify-center h-screen items-center">
+    <div className=" flex justify-center">
         <ToastContainer></ToastContainer>
       <form
         onSubmit={handelAddProduct}
-        className="border flex w-full rounded-md flex-col h-fit gap-3 p-3"
+        className="border flex w-[50%] mt-10 border-gray-900 rounded-md flex-col h-fit gap-3 p-3"
       >
         <input
           className="border-black border rounded p-1"

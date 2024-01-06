@@ -24,7 +24,7 @@ const DashboardNav = () => {
   }, [user?.email]);
 
   return (
-    <div className="h-screen bg-[#365486] p-2 w-[10%]">
+    <div className="">
       {loading ? (
         <h1>loading...</h1>
       ) : (

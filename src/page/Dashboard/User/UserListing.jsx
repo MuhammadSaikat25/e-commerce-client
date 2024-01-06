@@ -11,47 +11,51 @@ const UserListing = () => {
       .get(`/myOrder/${user?.email}`)
       .then((res) => setMyOrder(res.data));
   }, [user?.email]);
-  console.log(myOrder);
+
   return (
     <div className="w-full">
-      <h1>My Listing</h1>
-      <div className="w-full lg:mt-12">
-        <table className="lg:w-[50%] border-collapse">
-          <thead className="bg-slate-200 rounded-3xl text-blue-600">
-            <tr className="">
-              <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                Image
-              </th>
-              <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                Product Name
-              </th>
-              <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                Quantity
-              </th>
-              <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                Price
-              </th>
-              <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                Seller Email
-              </th>
-            </tr>
-          </thead>
-          {/* ------------------- Table Body------------------ */}
-          <tbody className="w-full">
-            {myOrder?.map((data) => (
-              <tr key={data._id} className="">
-                <td className="py-4 align-middle hover:shadow-xl duration-1000 shadow-gray-200 p-4">
-                  <img className="w-[50px]" src={data.proImg} alt="" />
-                </td>
-                <td>{data.proName}</td>
-                <td>{data.quantity}</td>
-                <td>${data.totalPrice}</td>
-                <td>{data.seller}</td>
+      <h1 className="text-2xl mt-3">My Listing</h1>
+      {myOrder?.length > 0 ? (
+        <div className="w-full lg:mt-12">
+          <table className="lg:w-[50%] border-collapse">
+            <thead className="bg-slate-200 rounded-3xl text-blue-600">
+              <tr className="">
+                <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  Image
+                </th>
+                <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  Product Name
+                </th>
+                <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  Quantity
+                </th>
+                <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  Price
+                </th>
+                <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  Seller Email
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            {/* ------------------- Table Body------------------ */}
+            <tbody className="w-full">
+              {myOrder?.map((data) => (
+                <tr key={data._id} className="">
+                  <td className="py-4 align-middle hover:shadow-xl duration-1000 shadow-gray-200 p-4">
+                    <img className="w-[50px]" src={data.proImg} alt="" />
+                  </td>
+                  <td>{data.proName}</td>
+                  <td>{data.quantity}</td>
+                  <td>${data.totalPrice}</td>
+                  <td>{data.seller}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <h1 className="mt-6 text-2xl">No Data Found</h1>
+      )}
     </div>
   );
 };
