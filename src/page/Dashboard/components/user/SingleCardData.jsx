@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 
 const SingleCardData = ({ cart, setId }) => {
   const { price, proName, proImg, color, _id, seller, proId, user } = cart;
-  console.log(seller)
+
   const [quantity, setQuantity] = useState(cart.quantity);
   const axiosInterceptor = useAxiosInterceptor();
   // ! ----------------- Inc cart quantity
@@ -22,27 +22,45 @@ const SingleCardData = ({ cart, setId }) => {
       quantity,
     });
   };
-  // ! delete cart item
+  // ! ------------------- delete cart item
   const deleteCart = async (id) => {
     setId(id);
     const deleteCartRes = await axiosInterceptor.delete(`/deleteCart/${id}`);
   };
-  const handelPayment=async(id,user,price,quantity,proId,seller,proImg)=>{
+  // ! -------------------------- handel payment
+  const handelPayment = async (
+    id,
+    user,
+    price,
+    quantity,
+    proId,
+    seller,
+    proImg
+  ) => {
     setId(id);
-     const totalPrice=Number((price * quantity).toFixed(2))
-     const paymentInfo={
-      user,totalPrice,quantity,proId,seller,proImg,proName
-     }
-     console.log(paymentInfo)
-    const postPaymentRes=await axiosInterceptor.post(`/payment`,paymentInfo)  
-    const incSellNumber=await axiosInterceptor.patch(`/incSellNumber/${proId}`,{quantity})
+    const totalPrice = Number((price * quantity).toFixed(2));
+    const paymentInfo = {
+      user,
+      totalPrice,
+      quantity,
+      proId,
+      seller,
+      proImg,
+      proName,
+    };
+    console.log(paymentInfo);
+    const postPaymentRes = await axiosInterceptor.post(`/payment`, paymentInfo);
+    const incSellNumber = await axiosInterceptor.patch(
+      `/incSellNumber/${proId}`,
+      { quantity }
+    );
     const deleteCartRes = await axiosInterceptor.delete(`/deleteCart/${id}`);
-  }
+  };
   return (
     <div className="relative w-full">
       <div className="">
-        <div className="flex p-5 items-center text-slate-950 justify-between relative">
-          <div className="flex gap-2">
+        <div className="lg:flex p-5 items-center text-slate-950 justify-between relative">
+          <div className="flex justify-between gap-2">
             <img className="w-[100px]" src={proImg} alt="" />
             <div className="">
               <h1>{proName}</h1>
@@ -77,9 +95,16 @@ const SingleCardData = ({ cart, setId }) => {
             </div>
           </div>
         </div>
-        <hr/>
+        <hr />
       </div>
-      <button onClick={()=>handelPayment(_id,user,price,quantity,proId,seller,proImg)} className="absolute bottom-0 mt-6 right-3 z-50 bg-[#711DB0] p-1 rounded text-white">Payment</button>
+      <button
+        onClick={() =>
+          handelPayment(_id, user, price, quantity, proId, seller, proImg)
+        }
+        className="absolute bottom-6 lg:bottom-0 mt-6 right-3 z-50 bg-[#711DB0] p-1 rounded text-white"
+      >
+        Payment
+      </button>
     </div>
   );
 };

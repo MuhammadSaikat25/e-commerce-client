@@ -17,8 +17,8 @@ const AddToCart = () => {
   }, [user?.email, id]);
 
   return (
-    <div className="lg:w-[50%]">
-      <h1 className=" text-2xl font-semibold text-gray-700 mt-11">
+    <div className="lg:w-[50%] mx-auto p-2">
+      <h1 className=" text-2xl mb-3 lg:mb-0 font-semibold text-gray-700 mt-11">
         Manage Cart Items
       </h1>
       {myCart.length > 0 ? (

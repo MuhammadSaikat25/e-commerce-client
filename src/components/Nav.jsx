@@ -16,7 +16,6 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
   const [role, setRole] = useState("");
   const [modal, setModal] = useState(false);
-  // console.log(role)
   const handelOut = async () => {
     await signOut(auth);
   };

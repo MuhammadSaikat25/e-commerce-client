@@ -6,13 +6,14 @@ import SingleProduct from "./SingleProduct";
 const AllProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  
+  const [page,setPage]=useState(0)
   useEffect(() => {
     setLoading(true);
     axios
       .get(`${import.meta.env.VITE_SERVER}/getAllProducts`)
       .then((res) => {
         setAllProducts(res.data);
+        setPage(res.data.length)
         setLoading(false);
       })
       .catch((error) => {
@@ -33,6 +34,7 @@ const AllProducts = () => {
             <SingleProduct key={products._id} products={products}></SingleProduct>
           ))}
         </div>
+            
       </div>
     </div>
   );
