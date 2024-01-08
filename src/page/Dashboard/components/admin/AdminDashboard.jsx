@@ -19,6 +19,7 @@ const AdminDashboard = () => {
           >
             Seller Request
           </NavLink>
+          <NavLink className={({isActive})=>isActive && 'text-orange-500 '} to={"/dashboard/manageUser"}>Manage User</NavLink>
           <Link className="" to={`/`}>
             Home
           </Link>
@@ -35,6 +36,7 @@ const AdminDashboard = () => {
           >
             Seller Request
           </NavLink>
+          <NavLink to={"/dashboard/manageUser"}>Manage User</NavLink>
           <Link className="" to={`/`}>
             Home
           </Link>

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "./page/MainLayout/MainLayout";
@@ -56,25 +55,25 @@ const router = createBrowserRouter([
         element: <AddToCart></AddToCart>,
       },
       {
-        path:'myListing',
-        element:<UserListing></UserListing>
+        path: "myListing",
+        element: <UserListing></UserListing>,
       },
       {
-        path:"SellerRequest",
-        element:<SellerRequest></SellerRequest>
+        path: "SellerRequest",
+        element: <SellerRequest></SellerRequest>,
       },
       {
-        path:'addProduct',
-        element:<AddProduct></AddProduct>
+        path: "addProduct",
+        element: <AddProduct></AddProduct>,
       },
       {
-        path:"SellerProducts",
-        element:<MyProducts></MyProducts>
+        path: "SellerProducts",
+        element: <MyProducts></MyProducts>,
       },
       {
-        path:"updateProduct/:id",
-        element:<UpdateProduct></UpdateProduct>
-      }
+        path: "updateProduct/:id",
+        element: <UpdateProduct></UpdateProduct>,
+      },
     ],
   },
 ]);
