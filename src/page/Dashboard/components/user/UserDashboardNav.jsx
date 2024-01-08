@@ -8,7 +8,7 @@ const UserDashboardNav = () => {
   return (
     <div className="">
       <div className="flex items-center justify-between lg:justify-around bg-[#3D3B40] gap-10 p-2 text-white">
-        <Link to={'/'}>
+        <Link to={"/"}>
           <img className="w-[150px]" src={logo} alt="" />
         </Link>
         <div className="lg:flex gap-3 items-center hidden">
@@ -55,12 +55,6 @@ const UserDashboardNav = () => {
             to={`/dashboard/myListing`}
           >
             My Listing
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => isActive && "text-orange-400"}
-            to={`/`}
-          >
-            Home
           </NavLink>
           <NavLink
             className={({ isActive }) => isActive && "text-orange-400"}

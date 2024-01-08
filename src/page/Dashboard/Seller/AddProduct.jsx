@@ -35,11 +35,11 @@ const AddProduct = () => {
  
   };
   return (
-    <div className=" flex justify-center">
+    <div className=" lg:flex justify-center ">
         <ToastContainer></ToastContainer>
       <form
         onSubmit={handelAddProduct}
-        className="border flex w-[50%] mt-10 border-gray-900 rounded-md flex-col h-fit gap-3 p-3"
+        className="border flex w-[80%] mx-auto lg:w-[50%] mt-10 border-gray-900 rounded-md flex-col h-fit gap-3 p-3"
       >
         <input
           className="border-black border rounded p-1"

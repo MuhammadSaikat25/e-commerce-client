@@ -26,7 +26,7 @@ const CATEGORY = () => {
           </Link>
         </div>
         <div className="relative ">
-          <Link to={"/productCategory/Accessories"}>
+          <Link to={"/productCategory/accessory"}>
             <h1 className="bg-[#141E46] text-white w-fit px-10 rounded-r-3xl absolute top-0">
               accessories
             </h1>
