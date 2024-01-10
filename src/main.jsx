@@ -18,6 +18,9 @@ import UserListing from "./page/Dashboard/User/UserListing";
 import MyProducts from "./page/Dashboard/Seller/MyProducts";
 import UpdateProduct from "./page/Dashboard/Seller/UpdateProduct";
 import OverView from "./page/Dashboard/Seller/OverView";
+import UserPrivateRoute from "./Firebase/Private/UserPrivateRoute";
+import SellerPrivateRoute from "./Firebase/Private/SellerPrivateRoute";
+import AdminPrivateRoute from "./Firebase/Private/AdminPrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -53,32 +56,36 @@ const router = createBrowserRouter([
     children: [
       {
         path: "addToCard",
-        element: <AddToCart></AddToCart>,
+        element: (
+          <UserPrivateRoute>
+            <AddToCart></AddToCart>
+          </UserPrivateRoute>
+        ),
       },
       {
         path: "myListing",
-        element: <UserListing></UserListing>,
+        element: <UserPrivateRoute><UserListing></UserListing></UserPrivateRoute>
       },
       {
         path: "SellerRequest",
-        element: <SellerRequest></SellerRequest>,
+        element: <AdminPrivateRoute><SellerRequest></SellerRequest></AdminPrivateRoute>
       },
       {
         path: "addProduct",
-        element: <AddProduct></AddProduct>,
+        element: <SellerPrivateRoute><AddProduct></AddProduct></SellerPrivateRoute>
       },
       {
         path: "SellerProducts",
-        element: <MyProducts></MyProducts>,
+        element: <SellerPrivateRoute><MyProducts></MyProducts></SellerPrivateRoute>
       },
       {
         path: "updateProduct/:id",
-        element: <UpdateProduct></UpdateProduct>,
+        element: <SellerPrivateRoute><UpdateProduct></UpdateProduct></SellerPrivateRoute>
       },
       {
-        path:"overView",
-        element:<OverView></OverView>
-      }
+        path: "overView",
+        element: <SellerPrivateRoute><OverView></OverView></SellerPrivateRoute>
+      },
     ],
   },
 ]);
