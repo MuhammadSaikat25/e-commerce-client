@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+
 const SingleProduct = ({products}) => {
   return (
     <Link to={`/productDetails/${products._id}`}>

@@ -25,10 +25,20 @@ const SellerNavDashboard = () => {
           >
             My Products
           </NavLink>
+          <NavLink
+            className={({ isActive }) => isActive && "text-orange-500"}
+            to={`overView`}
+          >
+            Over view
+          </NavLink>
         </div>
         {/* ------------------ Nav for sm ------------------ */}
         <div onClick={() => setOpen(!open)} className="lg:hidden">
-          {open ? <TfiClose color="white"></TfiClose> : <RiMenuFoldFill color="white"></RiMenuFoldFill>}
+          {open ? (
+            <TfiClose color="white"></TfiClose>
+          ) : (
+            <RiMenuFoldFill color="white"></RiMenuFoldFill>
+          )}
         </div>
       </div>
       {open && (
@@ -44,6 +54,12 @@ const SellerNavDashboard = () => {
             to={`SellerProducts`}
           >
             My Products
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => isActive && "text-orange-500"}
+            to={`overView`}
+          >
+            Over view
           </NavLink>
         </div>
       )}

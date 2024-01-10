@@ -17,6 +17,7 @@ import AddProduct from "./page/Dashboard/Seller/AddProduct";
 import UserListing from "./page/Dashboard/User/UserListing";
 import MyProducts from "./page/Dashboard/Seller/MyProducts";
 import UpdateProduct from "./page/Dashboard/Seller/UpdateProduct";
+import OverView from "./page/Dashboard/Seller/OverView";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
         path: "updateProduct/:id",
         element: <UpdateProduct></UpdateProduct>,
       },
+      {
+        path:"overView",
+        element:<OverView></OverView>
+      }
     ],
   },
 ]);

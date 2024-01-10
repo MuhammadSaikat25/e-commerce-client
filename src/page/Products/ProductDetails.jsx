@@ -28,6 +28,7 @@ const ProductDetails = () => {
       quantity: number,
       price: product.price,
       color: product.color,
+      category:product.category
     };
     const addCardRes = await axiosInterceptor.put(
       `/addToCard/${product._id}`,
@@ -39,6 +40,7 @@ const ProductDetails = () => {
       .get(`/singleProduct/${id}`)
       .then((res) => setProduct(res.data));
   }, [id]);
+
   return (
     <div className="mt-10 mb-10">
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-7 items-center">

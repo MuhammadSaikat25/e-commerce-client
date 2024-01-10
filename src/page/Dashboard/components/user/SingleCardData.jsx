@@ -4,8 +4,8 @@ import useAxiosInterceptor from "../../../../Hook/useAxiosInterceptor";
 import { IoMdClose } from "react-icons/io";
 
 const SingleCardData = ({ cart, setId }) => {
-  const { price, proName, proImg, color, _id, seller, proId, user } = cart;
-
+  const { price, proName, proImg, color, _id, seller, proId, user, category } =
+    cart;
   const [quantity, setQuantity] = useState(cart.quantity);
   const axiosInterceptor = useAxiosInterceptor();
   // ! ----------------- Inc cart quantity
@@ -35,7 +35,8 @@ const SingleCardData = ({ cart, setId }) => {
     quantity,
     proId,
     seller,
-    proImg
+    proImg,
+    category
   ) => {
     setId(id);
     const totalPrice = Number((price * quantity).toFixed(2));
@@ -47,8 +48,8 @@ const SingleCardData = ({ cart, setId }) => {
       seller,
       proImg,
       proName,
+      category,
     };
-    console.log(paymentInfo);
     const postPaymentRes = await axiosInterceptor.post(`/payment`, paymentInfo);
     const incSellNumber = await axiosInterceptor.patch(
       `/incSellNumber/${proId}`,
@@ -99,7 +100,16 @@ const SingleCardData = ({ cart, setId }) => {
       </div>
       <button
         onClick={() =>
-          handelPayment(_id, user, price, quantity, proId, seller, proImg)
+          handelPayment(
+            _id,
+            user,
+            price,
+            quantity,
+            proId,
+            seller,
+            proImg,
+            category
+          )
         }
         className="absolute bottom-6 lg:bottom-0 mt-6 right-3 z-50 bg-[#711DB0] p-1 rounded text-white"
       >

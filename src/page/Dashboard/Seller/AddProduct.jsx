@@ -7,15 +7,15 @@ import "react-toastify/dist/ReactToastify.css";
 const AddProduct = () => {
   const [category, setCategory] = useState("accessory");
   const { user } = useContext(AuthContext);
-    const axiosInterceptor=useAxiosInterceptor()
+  const axiosInterceptor = useAxiosInterceptor();
   const handelAddProduct = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const image = e.target.image.value;
     const color = e.target.color.value;
     const description = e.target.description.value;
-    const quantity =Number( e.target.quantity.value)
-    const price = Number(e.target.price.value)
+    const quantity = Number(e.target.quantity.value);
+    const price = Number(e.target.price.value);
     const productData = {
       name,
       image,
@@ -24,19 +24,24 @@ const AddProduct = () => {
       description,
       quantity,
       price,
-      sellerEmail:user?.email,
-      selling:0,
-      block:false
+      sellerEmail: user?.email,
+      selling: 0,
+      block: false,
     };
-   const AddRes=await axiosInterceptor.post(`/addedProductBySeller`,productData)
-   if(AddRes.status===200){
-    toast('Added Product Successful')
-   }
- 
+    const AddRes = await axiosInterceptor.post(
+      `/addedProductBySeller`,
+      productData
+    );
+    if (AddRes.status === 200) {
+      toast("Added Product Successful");
+    }
   };
   return (
-    <div className=" lg:flex justify-center ">
-        <ToastContainer></ToastContainer>
+    <div className="">
+      <ToastContainer></ToastContainer>
+      <h1 className="uppercase text-center font-bold mt-4">
+        Add Your Product for earning money
+      </h1>
       <form
         onSubmit={handelAddProduct}
         className="border flex w-[80%] mx-auto lg:w-[50%] mt-10 border-gray-900 rounded-md flex-col h-fit gap-3 p-3"
